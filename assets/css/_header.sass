@@ -1,0 +1,242 @@
+header.elastic
+  background: white
+  box-shadow: 0px -10px 18px 10px rgba(0, 0, 0, .25)
+  padding: 10px 0
+  .content-header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    .logo
+      margin-right: 80px
+    .menu
+      flex: 1
+      display: flex
+      justify-content: space-between
+      #menu-menu-principal
+        > li
+          > a
+            text-transform: unset
+            letter-spacing: .5px
+            color: black
+            font: $Ob
+            font-size: 15px
+          &.menu-item-has-children
+            > a
+              padding-right: 15px
+              &::after
+                content: ""
+                width: 4px
+                height: 4px
+                border-top: 2px solid black
+                border-left: 2px solid black
+                position: absolute
+                top: 0
+                bottom: 0
+                right: 0
+                margin: auto
+                transform: rotate(-135deg)
+            &:hover
+              > .sub-menu
+                display: block
+        .btn-contact
+          a
+            background: #8c6e2f
+            color: white
+            padding: 12px 15px
+            border-radius: 5px
+          i
+            font-size: 20px
+            margin-left: 5px
+  #menu-menu-principal
+    > .menu-item
+      position: relative
+      > .sub-menu
+        position: absolute
+        background: white
+        border: 1px solid lightgray
+        border-radius: 0
+        z-index: 1
+        top: 30px
+        left: 0
+        right: 0
+        transform: translateX(-15%)
+        width: max-content
+        padding: 0
+        display: none
+        > li
+          position: relative
+          &.menu-item-has-children
+            > a
+              &::after
+                content: ""
+                width: 4px
+                height: 4px
+                border-top: 2px solid black
+                border-left: 2px solid black
+                position: absolute
+                top: 0
+                bottom: 0
+                right: 10px
+                margin: auto
+                transform: rotate(135deg)
+            &:hover
+              .sub-menu
+                display: block
+        &::before
+          content: ''
+          width: 100px
+          height: 20px
+          background: transparent
+          position: absolute
+          top: -18px
+          right: 0
+          left: 0
+          margin: auto
+        .menu-item + .menu-item
+          border-top: 1px solid lightgray
+          padding-top: 0
+          margin-top: 0
+        a
+          display: block
+          padding: 10px 20px
+          text-transform: none
+          letter-spacing: .5px
+          color: black
+          font: $Ob
+          font-size: 15px
+        .sub-menu
+          position: absolute
+          background: white
+          border: 1px solid lightgray
+          border-radius: 0
+          padding: 0
+          z-index: 1
+          top: 0
+          width: max-content
+          left: 100%
+          transform: none
+          margin-top: -1px
+          padding: 0
+          display: none
+  .social-header
+    position: absolute
+    bottom: 0
+    right: 0
+    transform: translateX(-65%)
+    i
+      margin: 5px 2.5px 0
+      font-size: 22px
+      color: #6b5533
+@media only screen and (max-width: 768px)
+  header.elastic
+    .content-header
+      .hamburguer
+        i
+          font-size: 26px
+          color: #8c6e2f
+      .logo
+        margin-right: 15px
+      .contact-button
+        i
+          font-size: 26px
+          color: #8c6e2f
+      .menu.box-menu
+        position: fixed
+        left: 0
+        top: 0
+        width: 100%
+        height: 100%
+        z-index: 1
+        transition: .3s ease 
+        &:not(.atv)
+          left: -100%
+          .bg-menu
+            top: 0
+            right: -100%
+            opacity: 0
+        .bg-menu
+          transition: .3s ease
+          position: fixed
+          right: 0
+          top: 0
+          width: 100%
+          height: 100%
+          background: rgba(0,0,0,.3)
+        .floating-menu
+          position: absolute
+          left: 0
+          top: 0
+          width: 80%
+          height: 100%
+          background: white
+          .floating-menu-header
+            display: flex
+            justify-content: space-between
+            align-items: center
+            padding: 10px 20px
+            line-height: 1
+            border-bottom: 1px solid lightgray
+            box-shadow: -20px -10px 18px 10px rgba(0,0,0,.25)
+            .title
+              text-transform: uppercase
+              font: $Ob
+              font-size: 14px
+              max-width: min-content
+              text-align: center
+            .close-menu
+              font-size: 28px
+        #menu-menu-principal
+          display: block
+          position: absolute
+          height: calc(100% - 58px)
+          width: 100%
+          overflow-y: scroll
+          top: 58px
+          padding-top: 20px
+          > li
+            padding: 0 20px
+            a
+              display: block
+              padding: 10px 0
+            + li
+              > a
+                border-top: 1px solid black
+            &.btn-contact
+              a
+                background: none
+                color: black
+                border-radius: 0
+                i
+                  display: none
+    #menu-menu-principal
+      > .menu-item
+        a
+          position: relative
+        > .sub-menu
+          position: relative
+          transform: none
+          top: 0
+          display: none !important
+          width: 100%
+          border: none
+          padding-left: 10px 
+          &::before
+            display: none
+          > li.menu-item-has-children a::after
+            transform: rotate(225deg)
+          .sub-menu
+            position: relative
+            width: 100%
+            left: 0
+            border: none 
+            padding: 0
+            margin: 0
+            padding-left: 15px
+            display: none !important
+  header.elastic .content-header .menu.box-menu #menu-menu-principal
+    > li.menu-item-has-children.atv 
+      > .sub-menu
+        display: block !important
+    >.menu-item>.sub-menu>li.menu-item-has-children.atv 
+      > .sub-menu
+        display: block !important

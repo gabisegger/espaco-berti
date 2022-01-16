@@ -1,0 +1,108 @@
+.page-service
+  .service-description
+    display: flex
+    flex-wrap: wrap
+    .left-content
+      width: 400px
+      margin-right: 80px
+      img
+        width: 100%
+        height: auto 
+    .right-content
+      flex: 1
+      h2
+        margin-bottom: 20px
+        font: $Pbl
+        font-size: 23px
+        color: #8c6e2f
+      p
+        font-size: 14px
+        line-height: 28px
+      p + p
+        margin-top: 20px
+  .contact-form
+    margin-top: 40px
+    border: 1px solid lightgray
+    border-radius: 5px
+    padding: 40px 80px 50px
+    box-shadow: 0 0 10px 2px rgba(0,0,0,.1)
+    background: white
+    h2
+      text-align: center
+      margin-bottom: 20px
+      font: $Pbl
+      font-size: 29px
+      color: #8c6e2f
+    form
+      .row
+        display: grid
+        grid-template-columns: 1fr 1fr
+        column-gap: 20px
+        width: 100%
+        br
+          display: none
+        .wpcf7-form-control-wrap
+          width: 100%
+      input, textarea, select
+        border: 1px solid black
+        height: 45px
+        width: 100%
+        margin-top: 20px
+        padding: 10px
+        border-radius: 5px
+        font-size: 16px
+        font: $O
+        color: black
+        &::placeholder
+          color: gray
+      textarea
+        height: 150px
+      .form-btns
+        text-align: center
+        .btn-submit
+          position: relative
+          input[type="submit"]
+            width: max-content
+            margin: 10px auto 0
+            font: $Ob
+            text-transform: unset
+            font-size: 19px
+            height: auto
+            display: block
+            background: #8c6e2f
+            color: white
+            padding: 12px 25px
+            border-radius: 5px
+            border: none
+          .ajax-loader
+            position: absolute
+            right: 0
+            top: 0
+            bottom: 0
+            margin: auto
+@media only screen and (max-width: 768px)
+  .page-service 
+    .service-description 
+      .left-content
+        margin: auto
+        img
+          display: block
+      .right-content
+        text-align: center
+        margin-top: 30px
+        > h2
+          margin-bottom: 10px
+    .contact-form
+      padding: 15px 25px  20px
+      h2
+        font-size: 22px
+        margin: 0
+      form 
+        .row
+          display: block
+        input, textarea, select
+          width: 100%
+          margin-top: 10px
+        .form-btns .btn-submit input[type="submit"]
+          font-size: 16px
+          padding: 10px 25px

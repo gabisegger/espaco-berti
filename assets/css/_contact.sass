@@ -1,0 +1,189 @@
+.page-contact
+  .contact-form
+    margin-top: 0
+    border: 1px solid lightgray
+    border-radius: 5px
+    padding: 40px 80px 50px
+    box-shadow: 0 0 10px 2px rgba(0,0,0,.1)
+    margin-bottom: 40px
+    background: white
+    h2
+      text-align: center
+      margin-bottom: 20px
+      font: $Pbl
+      font-size: 29px
+    form
+      .row
+        display: grid
+        grid-template-columns: 1fr 1fr
+        column-gap: 20px
+        width: 100%
+        br
+          display: none
+        .wpcf7-form-control-wrap
+          width: 100%
+      input, textarea, select
+        border: 1px solid black
+        height: 45px
+        width: 100%
+        margin-top: 20px
+        padding: 10px
+        border-radius: 5px
+        font-size: 16px
+        font: $O
+        color: black
+        &::placeholder
+          color: gray
+      textarea
+        height: 150px
+      .form-btns
+        text-align: center
+        .btn-submit
+          position: relative
+          input[type="submit"]
+            width: max-content
+            margin: 10px auto 0
+            font: $Ob
+            text-transform: unset
+            font-size: 19px
+            height: auto
+            display: block
+            background: #8c6e2f
+            color: white
+            padding: 12px 25px
+            border-radius: 5px
+            border: none
+          .ajax-loader
+            position: absolute
+            right: 0
+            top: 0
+            bottom: 0
+            margin: auto
+  .contact-infos
+    display: flex
+    flex-wrap: wrap
+    .opening-hours
+      margin-top: 25px
+      small
+        font-size: 12px
+        padding-left: 45px
+        color: #6b5533
+        font-style: itali
+      .line
+        display: block
+        padding-left: 45px
+        margin-top: 5px
+        i
+          font-size: 26px
+          margin-right: 15px
+          width: 30px
+      .line:not(:first-child)
+        letter-spacing: 0
+        line-height: 18px
+        font-weight: 600
+        display: flex
+        align-items: center
+        color: #6b5533
+        font-size: 14px
+        margin: 0
+        margin-top: 5px
+      .line:first-child
+        padding-left: 0
+        font: $Ob
+        color: black
+        font-weight: 800
+        font-size: 18px
+        display: flex
+        align-items: center
+        text-align: center
+        color: #6b5533
+    .left
+      margin-right: 80px
+    .right
+      flex: 1
+      display: flex
+      align-items: center
+      .contact-items
+        .title
+          margin-bottom: 40px
+          font: $Pbl
+          font-size: 23px
+          color: #6b5533
+        a 
+          display: block
+          width: max-content
+          font: $Ob
+          color: black
+          font-weight: 800
+          font-size: 18px
+          display: flex
+          align-items: center
+          text-align: center
+          color: #6b5533
+          i
+            font-size: 26px
+            margin-right: 15px
+            width: 30px
+          + a
+            margin-top: 25px
+  #mapid
+    height: 400px 
+    width: 400px
+
+.page-contact-success
+  text-align: center
+  margin: 40px 0 0 
+  h2
+    font-weight: 500 
+@media only screen and (max-width: 768px)
+  .page-contact 
+    .contact-infos
+      .opening-hours
+        text-align: center
+        .line:first-child
+          justify-content: center
+        .line:not(:first-child)
+          padding: 0
+          justify-content: center
+        small
+          padding: 0
+          max-width: 300px
+          display: block
+          margin: 15px auto 0
+    .contact-form
+      padding: 15px 25px  20px
+      h2
+        font-size: 22px
+        margin: 0
+      form 
+        .row
+          display: block
+        input, textarea, select
+          width: 100%
+          margin-top: 10px
+        .form-btns .btn-submit input[type="submit"]
+          font-size: 16px
+          padding: 10px 25px
+    .contact-infos
+      .left
+        margin: 0
+        width: 100%
+        #mapid
+          width: 100%
+      .right
+        justify-content: center
+        .contact-items
+          .title
+            margin: 25px 0 15px
+            text-align: center
+          a
+            margin: auto
+            + a
+              margin-top: 15px
+              max-width: 270px
+              text-align: center
+
+
+
+
+
